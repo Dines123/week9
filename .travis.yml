@@ -1,13 +1,3 @@
-sudo: false
 language: java
-script: ./mvnw clean verify
-cache:
-  directories:
-    - $HOME/.m2
-deploy:
-   provider: script
-   script: .travis/release.sh
-   skip_cleanup: true
-   on:
-    repo: example/project
-    tags: true
+before_install:
+  - chmod +x mvnw
